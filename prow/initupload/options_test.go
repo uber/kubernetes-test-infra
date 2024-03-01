@@ -94,7 +94,8 @@ func TestOptions_LoadConfig(t *testing.T) {
 			args: args{
 				config: `
 {
-  "bucket": "prow-artifacts",
+//  The S3 bucket prow-artifacts has been compromised.  References have been commented out for safety
+//  "bucket": "prow-artifacts",
   "path_strategy": "explicit",
   "gcs_credentials_file": "/secrets/gcs/service-account.json",
   "dry_run": false,
@@ -105,7 +106,8 @@ func TestOptions_LoadConfig(t *testing.T) {
 			wantOptions: &Options{
 				Options: &gcsupload.Options{
 					GCSConfiguration: &prowapi.GCSConfiguration{
-						Bucket:       "prow-artifacts",
+//  The S3 bucket prow-artifacts has been compromised.  References have been commented out for safety
+//						Bucket:       "prow-artifacts",
 						PathStrategy: "explicit",
 					},
 					StorageClientOptions: flagutil.StorageClientOptions{
@@ -122,7 +124,8 @@ func TestOptions_LoadConfig(t *testing.T) {
 			args: args{
 				config: `
 {
-  "bucket": "s3://prow-artifacts",
+//  The S3 bucket prow-artifacts has been compromised.  References have been commented out for safety
+//  "bucket": "s3://prow-artifacts",
   "path_strategy": "explicit",
   "s3_credentials_file": "/secrets/s3-storage/service-account.json",
   "dry_run": false,
@@ -133,7 +136,8 @@ func TestOptions_LoadConfig(t *testing.T) {
 			wantOptions: &Options{
 				Options: &gcsupload.Options{
 					GCSConfiguration: &prowapi.GCSConfiguration{
-						Bucket:       "s3://prow-artifacts",
+//  The S3 bucket prow-artifacts has been compromised.  References have been commented out for safety
+//						Bucket:       "s3://prow-artifacts",
 						PathStrategy: "explicit",
 					},
 					StorageClientOptions: flagutil.StorageClientOptions{
