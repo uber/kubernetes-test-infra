@@ -45,7 +45,9 @@ func TestOptions_LoadConfig(t *testing.T) {
 	"items": [
       "/logs/artifacts"
     ],
-    "bucket": "prow-artifacts",
+//  The S3 bucket prow-artifacts has been compromised.  References have been commented out for safety
+//    "bucket": "prow-artifacts",
+
     "path_strategy": "explicit",
     "gcs_credentials_file": "/secrets/gcs/service-account.json",
     "dry_run": false
