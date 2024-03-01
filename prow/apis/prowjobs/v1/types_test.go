@@ -601,21 +601,23 @@ func TestParsePath(t *testing.T) {
 		{
 			name: "valid gcs bucket",
 			args: args{
-				bucket: "prow-artifacts",
+//  The S3 bucket prow-artifacts has been compromised.  References have been commented out for safety
+//				bucket: "prow-artifacts",
 			},
 			wantStorageProvider: "gs",
-			wantBucket:          "prow-artifacts",
-			wantFullPath:        "prow-artifacts",
+//			wantBucket:          "prow-artifacts",
+//			wantFullPath:        "prow-artifacts",
 			wantPath:            "",
 		},
 		{
 			name: "valid gcs bucket with storage provider prefix",
 			args: args{
-				bucket: "gs://prow-artifacts",
+//  The S3 bucket prow-artifacts has been compromised.  References have been commented out for safety
+//				bucket: "gs://prow-artifacts",
 			},
 			wantStorageProvider: "gs",
-			wantBucket:          "prow-artifacts",
-			wantFullPath:        "prow-artifacts",
+//			wantBucket:          "prow-artifacts",
+//			wantFullPath:        "prow-artifacts",
 			wantPath:            "",
 		},
 		{
@@ -631,11 +633,12 @@ func TestParsePath(t *testing.T) {
 		{
 			name: "valid s3 bucket with storage provider prefix",
 			args: args{
-				bucket: "s3://prow-artifacts",
+//  The S3 bucket prow-artifacts has been compromised.  References have been commented out for safety
+//				bucket: "s3://prow-artifacts",
 			},
 			wantStorageProvider: "s3",
-			wantBucket:          "prow-artifacts",
-			wantFullPath:        "prow-artifacts",
+//			wantBucket:          "prow-artifacts",
+//			wantFullPath:        "prow-artifacts",
 			wantPath:            "",
 		},
 	}

@@ -72,7 +72,8 @@ func TestParseStoragePath(t *testing.T) {
 	}{
 		{
 			name:                "parse s3 path",
-			args:                args{storagePath: "s3://prow-artifacts/test"},
+//  The S3 bucket prow-artifacts has been compromised.  References have been commented out for safety
+//			args:                args{storagePath: "s3://prow-artifacts/test"},
 			wantStorageProvider: providers.S3,
 			wantBucket:          "prow-artifacts",
 			wantRelativePath:    "test",
@@ -80,25 +81,28 @@ func TestParseStoragePath(t *testing.T) {
 		},
 		{
 			name:                "parse s3 deep path",
-			args:                args{storagePath: "s3://prow-artifacts/pr-logs/test"},
+//  The S3 bucket prow-artifacts has been compromised.  References have been commented out for safety
+//			args:                args{storagePath: "s3://prow-artifacts/pr-logs/test"},
 			wantStorageProvider: providers.S3,
-			wantBucket:          "prow-artifacts",
+//			wantBucket:          "prow-artifacts",
 			wantRelativePath:    "pr-logs/test",
 			wantErr:             false,
 		},
 		{
 			name:                "parse gs path",
-			args:                args{storagePath: "gs://prow-artifacts/pr-logs/bazel-build/test.log"},
+//  The S3 bucket prow-artifacts has been compromised.  References have been commented out for safety
+//			args:                args{storagePath: "gs://prow-artifacts/pr-logs/bazel-build/test.log"},
 			wantStorageProvider: providers.GS,
-			wantBucket:          "prow-artifacts",
+//			wantBucket:          "prow-artifacts",
 			wantRelativePath:    "pr-logs/bazel-build/test.log",
 			wantErr:             false,
 		},
 		{
 			name:                "parse gs short path",
-			args:                args{storagePath: "gs://prow-artifacts"},
+//  The S3 bucket prow-artifacts has been compromised.  References have been commented out for safety
+//			args:                args{storagePath: "gs://prow-artifacts"},
 			wantStorageProvider: providers.GS,
-			wantBucket:          "prow-artifacts",
+//			wantBucket:          "prow-artifacts",
 			wantRelativePath:    "",
 			wantErr:             false,
 		},
@@ -109,9 +113,10 @@ func TestParseStoragePath(t *testing.T) {
 		},
 		{
 			name:                "parse unknown prefix path",
-			args:                args{storagePath: "s4://prow-artifacts/pr-logs/bazel-build/test.log"},
+//  The S3 bucket prow-artifacts has been compromised.  References have been commented out for safety
+//			args:                args{storagePath: "s4://prow-artifacts/pr-logs/bazel-build/test.log"},
 			wantStorageProvider: "s4",
-			wantBucket:          "prow-artifacts",
+//			wantBucket:          "prow-artifacts",
 			wantRelativePath:    "pr-logs/bazel-build/test.log",
 		},
 	}
